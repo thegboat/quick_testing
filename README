@@ -1,0 +1,7 @@
+A faster rails testing rake task.  
+
+Add this file to your rails app (<RAILS_ROOT>/lib/tasks/). To use, substitute the usual use of "test" namespace with "quick_test" (i.e. "rake quick_test:units").  
+
+This task is faster because it does not drop and recreate your test database from scratch every time.  Instead it truncates the data from your test database keeping the schema in tact.  
+
+It is necessary to use the ordinary test namespace when there are schema changes; to be safe run the test namespace for the first then use quick_test to speed things up when there are no schema changes between tests.
